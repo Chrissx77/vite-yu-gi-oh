@@ -8,7 +8,7 @@ export default{
 <template>
     <header>
         <img src="../assets/ygoprodeck_header_logo.png" alt="" srcset="">
-        <h1>YU-Gi-Oh API</h1>
+        <h1>Yu-Gi-Oh API</h1>
     </header>
 </template>
 
