@@ -1,4 +1,5 @@
 <script>
+import ListCards from './ListCards.vue';
 export default {
     name: "Main",
     components:{
@@ -20,7 +21,7 @@ export default {
 @use '../style/partials/mixins' as *;
 
 main{
+    padding: 50px;
     background-color: orange;
-    min-height: 1000px;
 }
 </style>
