@@ -26,12 +26,17 @@ export default {
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixins' as *;
 
+.card {
+    width: calc(100% / 5 - 10px);
+}
+
 
 img{
-    width: 250px;
+    width: 100%;
 }
 
 .info{
+    font-size: 1.5rem;
     width: 250px;
     text-align: center;
 }

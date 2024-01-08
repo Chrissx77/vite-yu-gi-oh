@@ -19,35 +19,12 @@ export default {
 
 <template>
     <div class="cardsFound">
-        <h2>Found Card: 20
+        <h2>Found Card:20
 
         </h2>
     </div>
     <div class="containerCards">
-        <div v-for="card in store.arrayCards" class="card">
-            <SingleCard :info="card" />
-        </div>
-        <!-- <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/>
-        <SingleCard/> -->
-
+        <SingleCard v-for="card in store.arrayCards" :key="card.id" :info="card" />
     </div>
 </template>
 
@@ -55,7 +32,7 @@ export default {
 @use '../style/partials/variables' as *;
 @use '../style/partials/mixins' as *;
 
-.cardsFound{
+.cardsFound {
     @include contain;
     color: white;
     padding: 10px;
@@ -64,16 +41,11 @@ export default {
 }
 
 .containerCards {
-    padding: 20px;
     @include contain;
+    padding: 20px;
     background-color: white;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-
-    .card {
-        width: calc(100% / 5 - 10px);
-
-    }
 }
 </style>
