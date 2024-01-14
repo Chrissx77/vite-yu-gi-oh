@@ -23,27 +23,42 @@ export default {
 
   methods: {
     getCards() {
+      if(store.searchArche){
+        store.apiURL += `&archetype=${store.searchArche}`
+      }
       axios
         .get(store.apiURL)
         .then(res =>{
-          console.log(res.data);
+          console.log(res.data.data);
           store.arrayCards = res.data.data;
         })
         .catch((error) =>{
+          console.log(error);
+        })
+    },
+
+    getArche(){
+      axios
+        .get(store.apiArche)
+        .then(res =>{
+          console.log(res.data);
+          store.arrayArche = res.data;
+        })
+        .catch(error =>{
           console.log(error);
         })
     }
   },
 
   created() {
-    this.getCards();
+    this.getArche();
   },
 }
 </script>
 
 <template>
   <Header />
-  <Main />
+  <Main @filter="getCards"/>
 </template>
 
 <style lang="scss">
