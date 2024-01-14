@@ -12,15 +12,22 @@ export default {
         return {
             store,
         }
-    }
+    },
+
+    computed:{
+        getFound(){
+            return store.arrayCards.length;
+        }
+    },
 }
 
 </script>
 
 <template>
     <div class="cardsFound">
-        <h2>Found Card:20
 
+        <h2>
+            Cards Found: {{ getFound }}
         </h2>
     </div>
     <div class="containerCards">
